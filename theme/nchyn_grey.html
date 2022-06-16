@@ -1003,7 +1003,7 @@ return false;
         tmptextarea.select();
         tmptextarea.setSelectionRange(0, tmptextarea.value.length);
         document.execCommand("copy");
-        alert(tmptextarea.innerHTML+"<!--constStr@Success-->");
+        alert(decodeURIComponent(tmptextarea.innerHTML)+"<!--constStr@Success-->");
     }
 <!--UploadJsStart-->
     function size_format(num) {
@@ -1078,7 +1078,7 @@ return false;
                 uploadbuttonshow();
                 return;
             }
-            var upbigfilename = encodeURIComponent((file.webkitRelativePath||file.name));
+            var upbigfilename = file.webkitRelativePath||file.name;
             var filemd5='';
 <!--GuestStart-->
             function getext(str) {
@@ -1104,21 +1104,22 @@ return false;
         readblob(asize);
 
         reader.onload = function(e){
-            td2.innerHTML='<!--constStr@Calculate--> md5: '+(asize*100/file.size).toFixed(2)+'%';
+            var strarry=file.name.split('.');
+            td2.innerHTML='计算 md5: '+(asize*100/file.size).toFixed(2)+'%';
             var binary = this.result;
             spark.append(binary);
             asize += chunksize;
             if (asize < file.size) {
                 readblob(asize);
             } else {
-                filemd5 = spark.end();
-                td2.innerHTML='md5: '+filemd5;
-                upbigfilename = filemd5+ext;
+                filemd5 = `${encodeURIComponent(strarry[0])}-${spark.end()}`;
+                td2.innerHTML='文件名: '+filemd5;
+                upbigfilename = `${filemd5}${ext}`;
 <!--GuestEnd-->
             td2.innerHTML='<!--constStr@GetUploadLink--> ...';
             var xhr1 = new XMLHttpRequest();
             xhr1.open("POST", '?action=upbigfile');
-            xhr1.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=utf-8");
+            // xhr1.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=utf-8");
             xhr1.setRequestHeader('x-requested-with','XMLHttpRequest');
             xhr1.onprogress = function(e){
                 td2.innerHTML+='.';
@@ -1131,7 +1132,7 @@ return false;
                     var html=JSON.parse(xhr1.responseText);
                     td2.innerHTML=html['error']['code']+': '+html['error']['message'];
 <!--GuestStart-->
-                    td2.innerHTML='md5: '+filemd5;
+                    td2.innerHTML='文件名: '+decodeURIComponent(filemd5);
 <!--GuestEnd-->
                     td1.innerHTML='<div style="color:green"><a href="<!--base_disk_path--><!--Path-->'+(file.webkitRelativePath||file.name)+'?preview" id="upfile_a_'+tdnum+'" target="_blank">'+td1.innerHTML+'</a><br><a href="<!--base_disk_path--><!--Path-->'+(file.webkitRelativePath||file.name)+'" id="upfile_a1_'+tdnum+'"></a><!--constStr@UploadComplete--><button onclick="CopyAllDownloadUrl(\'#upfile_a1_'+tdnum+'\');" id="upfile_cpbt_'+tdnum+'" <!--AdminStart--> style="display:none"<!--AdminEnd--> ><!--constStr@CopyUrl--></button></div>';
                 }
@@ -1153,7 +1154,13 @@ return false;
                     getuplink(i);
                 }
             }
-            xhr1.send('upbigfilename='+ encodeURIComponent(upbigfilename) +'&filesize='+ file.size +'&filelastModified='+ file.lastModified +'&filemd5='+ filemd5);
+            
+            let formData = new FormData();
+            formData.append("upbigfilename", upbigfilename);
+            formData.append("filesize", file.size);
+            formData.append("filelastModified", file.lastModified);
+            formData.append("filemd5", filemd5);
+            xhr1.send(formData);
 <!--GuestStart-->
             }
         }
@@ -1309,7 +1316,7 @@ return false;
                 uploadbuttonshow();
                 return;
             }*/
-            var upbigfilename = encodeURIComponent((file.webkitRelativePath||file.name));
+            var upbigfilename = (file.webkitRelativePath||file.name);
             var reader = new FileReader();
             reader.onprogress = function(e) {
                 td2.innerText = '计算SHA1... ' + (e.loaded*100/file.size).toFixed(2) + " %";
@@ -1369,7 +1376,7 @@ return false;
                             getuplink(i);
                         }
                     }
-                    xhr1.send('upbigfilename='+ encodeURIComponent(upbigfilename) +'&filesize='+ file.size +'&filelastModified='+ file.lastModified + '&filesha1=' + filesha1 + '&chunksize=' + chunksize);
+                    xhr1.send('upbigfilename='+ upbigfilename +'&filesize='+ file.size +'&filelastModified='+ file.lastModified + '&filesha1=' + filesha1 + '&chunksize=' + chunksize);
                 }
             }
             reader.readAsArrayBuffer(file);
@@ -1711,13 +1718,13 @@ return false;
                 break;
         }
         if (parameter) {
-            var key = encodeURIComponent(parameter[0]);
+            var key = parameter[0];
             if (key.length == 0) return;
             if (parameter[1].constructor != Array) parameter[1] = [parameter[1]];
             var values = parameter[1];
             var results = [];
             for (var i = 0; i < values.length; i++) {
-                results.push(key + '=' + encodeURIComponent(values[i]));
+                results.push(key + '=' + values[i]);
             }
             return results.join('&');
         }
