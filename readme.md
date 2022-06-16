@@ -11,8 +11,8 @@
 * 设定网站根目录：/OneManager-php-3.5
 * 设置伪静态：rewrite ^/(.*) /index.php?/$1 last;
 #
-本程序在源程序[OneManager-php-3.5的基础上修改
-[彩虹外链](https://github.com/qkqpttgf/OneManager-php)
+本程序在源程序[OneManager-php-3.5](https://github.com/qkqpttgf/OneManager-php)的基础上修改
+
  * 修改默认主题为逸笙nchyn_grey.html；
  * 修改上传文件名称为：文件名+MD5值；
  * 修复该主题文件点击登录为="?login=admin"，使其可以正常跳转登录界面；
