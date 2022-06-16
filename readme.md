@@ -25,155 +25,272 @@
 #
 
 
-中文readme
+# 注意：
 
-NOTICE:
-The Releases is used as archive, not newest code.
+  请关掉浏览器的翻译。  
 
-Please read the descriptions of settings before raising an issue.
+  Releases只是当存档在用的，并不是最新代码。  
 
-Deploy to Vercel
-Official
-https://vercel.com/
+  请将设置中所有的设置项的说明都读一遍，有些问题就不用问了。  
 
-Demo
-https://onemanager-php.vercel.app/
+---
 
-Notice
-you must wait 30-50s to make sure deploy READY after change config;
+# 部署到 Vercel  
 
-Vercel limit 100 deploy every day.
+### 官网
 
-How to Install
-https://scfonedrive.github.io/Vercel/Deploy.html .
+  https://vercel.com/  
 
-Deploy to Replit
-Official
-https://repl.it/
-https://replit.com/
+### Demo
 
-Demo
-https://onemanager.qkqpttgf.repl.co/
+  https://onemanager-php.vercel.app/  
 
-Notice
-Import from Github useing the .replit file in code files will cause an empty web page, may someone help me?
+### 注意
 
-How to Install
-Click the "+" or "Create Repl", find template "PHP Web Server" (via input "php"), input a name for your project in "Title" or left it default, Click the "+ Create Repl".
-After done, input git clone https://github.com/qkqpttgf/OneManager-php && mv -b OneManager-php/* ./ && mv -b OneManager-php/.[^.]* ./ && rm -rf *~ && rm -rf OneManager-php to Console or Shell on the right, press "Enter" to run it.
-Click the green button "Run", it will show the web page on the right, you can open it in a new tab or window.
-Deploy to Heroku
-Official
-https://heroku.com
+> 1. 每次更改配置后都要等 30-50s 来确保部署成功；  
+>
+> 2. Vercel 每天限制 100 次部署。  
 
-Demo
-https://herooneindex.herokuapp.com/
+### 安装（英文）
 
-How to Install
-Click the button Deploy to Deploy a new app("We couldn't deploy your app because the source code violates the Salesforce Acceptable Use and External-Facing Services Policy.")
+  https://scfonedrive.github.io/Vercel/Deploy.html   
 
-Star this project, then Fork, create an app in Heroku, then turn to the Deploy tab, "Deployment method" via "Connect GitHub", select your github fork.
+---
 
-Deploy to Glitch
-Official
-https://glitch.com/
+# 部署到 Replit  
 
-Demo
-https://onemanager.glitch.me/
+### 官网
 
-How to Install
-[New Project] -> [Import form Github] -> paste "https://github.com/qkqpttgf/OneManager-php" , after done, [Show] -> [In a New Window].
+  https://repl.it/  
+  https://replit.com/  
 
-Deploy to Tencent Serverless Cloud Function (SCF)
-Official
-https://cloud.tencent.com/product/scf
+### Demo
 
-DEMO
-null
+  https://onemanager.qkqpttgf.repl.co/  
 
-How to Install
-see CN readme.
+### 注意
 
-Deploy to Huawei cloud Function Graph (FG)
-Official
-https://console.huaweicloud.com/functiongraph/
+> 直接`Import from Github`通过`.replit`文件指定php时，网页会空白，有人帮忙解决吗？  
 
-DEMO
-null
+### 安装
 
-How to Install
-see CN readme.
+> 1. 点右上的 "+" 或左上的 "+ Create Repl"，template中输入php，点选"PHP Web Server"，在"Title"里输入你想要的名称或者让它默认, 点下面的"+ Create Repl"。  
+> 2. 结束后，在右边的Console或Shell里输入 `git clone https://github.com/qkqpttgf/OneManager-php && mv -b OneManager-php/* ./ && mv -b OneManager-php/.[^.]* ./ && rm -rf *~ && rm -rf OneManager-php` 敲回车运行。  
+> 3. 点上方的绿色 "Run" 按钮，右边会显示一个网页，你要在新窗口打开它来安装，不然不能登录。  
 
-Deploy to Aliyun Function Compute (FC)
-Official:
-https://fc.console.aliyun.com/
+---
 
-DEMO
-null
+# 部署到 Heroku  
 
-How to Install
-see CN readme.
+### 官网
 
-Deploy to Baidu Cloud Function Compute (CFC)
-Official
-https://console.bce.baidu.com/cfc/#/cfc/functions
+  https://heroku.com  
 
-DEMO
-null
+### Demo
 
-How to Install
-see CN readme.
+  https://herooneindex.herokuapp.com/  
 
-Deploy to Virtual Private Server (VPS) or php host
-DEMO
-null
+### 安装
 
-How to Install
-Start web service on your server (httpd or other), make sure you can visit it.
+> 给这个项目点star，然后fork，在Heroku创建一个app，然后点进Deploy页，在"Deployment method"处点"Connect GitHub"，选择你的fork。   
 
-Make the rewrite works, the rule is in .htaccess file, make sure any query redirect to index.php.
+---
 
-Upload code.
+# 部署到 Glitch  
 
-Change the file .data/config.php can be read&write (666 is suggested).
+### 官网
 
-View the website in chrome or other.
+  https://glitch.com/  
 
-Features
-When downloading files, the program produce a direct url, visitor download files from MS OFFICE via the direct url, the server expend a few bandwidth in produce.
+### Demo
 
-When uploading files, the program produce a direct url, visitor upload files to MS OFFICE via the direct url, the server expend a few bandwidth in produce.
+  https://onemanager.glitch.me/  
 
-The XXX_path in setting is the path in Onedrive, not in url, program will find the path in Onedrive.
+### 安装
 
-LOGO ICON: put your 'favicon.ico' in the path you showed, make sure xxxxx.com/favicon.ico can be visited.
+  点 [New Project] -> 点 [Import form Github] -> 粘贴 "https://github.com/qkqpttgf/OneManager-php" ，结束后，左上角点 [Show] -> [In a New Window]。  
 
-Program will show content of 'readme.md' & 'head.md'.
+---
 
-guest upload path, is a folder that the guest can upload files, but can not be list (exclude admin).
+# 部署到腾讯无服务器云函数 Serverless Cloud Function (SCF)  
 
-If there is 'index.html' file, program will only show the content of 'index.html', not list the files.
+### 官网
 
-Click 'EditTime' or 'Size', the list will sort by time or size, Click 'File' can resume sort.
+  https://cloud.tencent.com/product/scf  
 
-Functional files
-favicon.ico
-put it in the showing home folder of FIRST disk (maybe not root of onedrive).
+### DEMO
 
-index.html
-show content of index.html as html.
+  暂无  
 
-head.md
-readme.md
-it will showed at top or bottom as markdown.
+### 注意事项
 
-head.omf
-foot.omf
-it will showed at top or bottom as html (javascript works!).
+  SCF新增限制，环境变量整体最大4KB，所以最多添加4个盘（可以在安装时选择将配置保存在文件来避开限制）。  
 
-A cup of coffee
-https://paypal.me/qkqpttgf
+### 安装
 
-Chat
-Telegram Group
-https://t.me/joinchat/I_RVc0bqxuxlT-d0cO7ozw
+1. 进入函数服务，上方选择地区，然后点击新建。
+
+2. 输入函数名称，选择模板函数，在模糊搜索中输入onedrive，大小写随意，选择那个【获取onedrive信息.....】，点下一步，在代码界面不用动，直接点完成。
+
+3. 点击触发管理，创建触发器，触发方式改成API网关触发，底下勾选启用集成响应，提交。
+
+4. 在触发管理中可以看到一个 访问路径，访问它，开始安装。 
+
+    （重点：**勾选集成响应**）  
+
+> **添加网盘时，SCF可能会反应不过来，不跳转到微软，导致添加失败，请不要删除这个盘，再添加一次相同标签的盘就可以了。**
+
+----
+
+
+# 部署到华为云函数工作流 Function Graph (FG)  
+
+### 官网
+
+  https://console.huaweicloud.com/functiongraph/  
+
+### DEMO
+
+  暂无  
+
+### 注意事项
+
+  FG中，环境变量整体大小为2KB，所以最多添加2个盘（一个onedrive一个aliyundrive）（可以在安装时选择将配置保存在文件来避开限制）。  
+
+### 安装
+
+1. 在函数列表，点右边创建函数  
+2. 输入名称，选择运行时语言为PHP7.3，点上传ZIP文件，选择文件，然后点右边的创建函数（这里的ZIP文件不能直接用从Github上下载的ZIP文件，要将它解压后，去掉外层文件夹后，再压缩为ZIP。）  
+3. 创建触发器：选API网关，安全认证选None，后端超时（毫秒）将5000改成30000，上面创建分组一下，其它的点点点  
+4. 访问触发器给的url，开始安装
+5. 在【触发器界面】点【触发器名称】，跳到API网关管理，右边【更多URL】，可以添加自定义域名，自定义域名后发现还是要 xxxx.com/函数名 来访问，点上方的【编辑】，第1页不用改，点【下一步】，**请求Path改成/**，注意匹配模式是前缀匹配，Method为ANY，然后不用点下一步了，点【立即完成】，然后去【发布】生效  
+
+----
+
+# 部署到阿里云函数计算 Function Compute (FC)  
+
+### 官网 
+
+  https://fc.console.aliyun.com/  
+
+### DEMO
+
+  无  
+
+### 安装
+
+1. 新建函数 -- HTTP函数  
+2. 运行环境选择php7.2  
+3. 触发器认证方式选择anonymous，请求方式里面，点一下GET，再点一下POST，最终框框里面有这2个  
+4. 上传代码（这里的ZIP文件不能直接用从Github上下载的ZIP文件，要将它解压后，去掉外层文件夹后，再压缩为ZIP。）  
+5. 触发器中点进去，找到配置自定义域名，点击前往，创建，路径中填 /* ，其它下拉选择。
+6. 访问你的域名，开始安装  
+
+---
+
+# 部署到百度云函数计算 Cloud Function Compute (CFC)  
+
+### 官网
+
+  https://console.bce.baidu.com/cfc/#/cfc/functions  
+
+### DEMO
+
+  暂无  
+
+### 注意事项
+
+  **自定义域名需要另外使用API网关，并备案。**
+
+### 安装
+
+1. 在函数列表，点创建函数  
+2. 创建方式改为空白函数，点下一步  
+3. 输入名称，选择运行时为PHP7.2，点下一步  
+4. 触发器：下拉选择HTTP触发器，URL路径填 /{filepath+} ，HTTP方法全选，身份验证：不验证，点提交  
+5. 进入代码编辑页，编辑类型改上传函数ZIP包，选择文件（这里的ZIP文件不能直接用从Github上下载的ZIP文件，要将它解压后，去掉外层文件夹后，再压缩为ZIP。），开始上传  
+6. 点击右边触发器，复制并访问提供的url，开始安装  
+
+---
+
+# 部署到VPS (Virtual Private Server) 或 空间  
+
+### DEMO
+
+暂无
+
+### 安装
+
+1. 启动web服务器，确保你能访问到。  
+
+2. 开启伪静态(重写)功能，规则在.htaccess文件中，ngnix从里面复制，我们的目的是不管访问什么都让index.php来处理。  
+
+3. 上传好代码。  
+
+4. 使web身份可读写代码中的.data/config.php文件，推荐chmod 666 .data/config.php。  
+
+5. 在浏览器中访问。  
+
+----
+
+# 特性  
+
+  下载时，由程序解析出直链，浏览器直接从微软Onedrive服务器下载文件，服务器只消耗与微软通信的少量流量。  
+
+  上传时，由程序生成上传url，浏览器直接向微软Onedrive的这个url上传文件，服务器只消耗与微软通信的少量流量。  
+
+  设置中的 XXX_path 是Onedrive里面的路径，并不是你url里面的，程序会去你Onedrive里面找这个路径。  
+
+  网站图标：将favicon.ico文件放在你要展示的目录中，确保 xxxxx.com/favicon.ico 可以访问到。  
+
+  可以在文件列表显示head.md跟readme.md文件的内容。  
+
+  游客上传目录（也叫图床目录），是指定一个目录，让游客可以上传文件，不限格式，不限大小。这个目录里面的内容不列清单（除非管理登录）。  
+
+  如果目录中有index.html文件，只会输出显示html文件，不显示程序框架。  
+
+  点击“时间”、“大小”，可以排序显示，点“文件”恢复原样。  
+
+----
+
+# 功能性文件
+
+### favicon.ico
+
+  放在第一个盘的显示目录（不一定是onedrive根目录）。  
+
+### index.html
+
+  将index.html以静态网页显示出来。  
+
+### head.md
+
+### readme.md
+
+  以MD语法显示在顶部或底部。  
+
+### head.omf
+
+### foot.omf
+
+  以html显示在顶部或底部（可以跑js）。  
+
+----
+
+# 捐赠
+
+  https://paypal.me/qkqpttgf  
+
+-----
+
+# 群聊
+
+  **请看完上面的中英双语再加群，谢谢！**  
+
+### QQ 群:
+
+  212088653  
+
+### Telegram Group
+
+  https://t.me/joinchat/I_RVc0bqxuxlT-d0cO7ozw  
