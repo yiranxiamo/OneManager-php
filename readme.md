@@ -13,7 +13,7 @@
  * 修复该主题文件点击登录为="?login=admin"，使其可以正常跳转登录；
  * 删除Timestamp not Number提示；
 ## 安装
-* php: 7.4
+* php: 7.4+
 * 设定网站根目录：/OneManager-php-3.5
 * 设置伪静态：rewrite ^/(.*) /index.php?/$1 last;
 ## 下载
