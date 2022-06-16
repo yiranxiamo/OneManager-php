@@ -18,7 +18,7 @@
 * 设定网站根目录：/OneManager-php-3.5
 * 设置伪静态：rewrite ^/(.*) /index.php?/$1 last;
 ## 下载
-  
+  [OneManager-php-3.5-Mediy](https://github.com/yiranxiamo/OneManager-php/releases/tag/v3.5)
  ## 示例图
 ![图示3](https://mediy.oss-cn-beijing.aliyuncs.com/github%E5%B1%95%E7%A4%BA%E5%9B%BE/2.png)
 ![图示1](https://mediy.oss-cn-beijing.aliyuncs.com/github%E5%B1%95%E7%A4%BA%E5%9B%BE/1.png)
