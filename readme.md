@@ -5,7 +5,7 @@
  * 实例Demo: https://upload.pan.mediy.cn/
  
 ## 说明
-源程序[OneManager-php-3.5](https://github.com/qkqpttgf/OneManager-php)
+原程序[OneManager-php-3.5](https://github.com/qkqpttgf/OneManager-php)
 
 因兴趣使然而修改的如下几处地方用于自用。无奈技术小白，能力有限，期望大佬们指正错误。
  * 修改默认主题为逸笙nchyn_grey.html；
