@@ -1,6 +1,6 @@
  ## 概要
 
- * 基于 serverless 的 Onedrive 索引和管理器。可以部署到 Heroku/Glitch/Vercel/Replit/SCF/FG/FC/CFC/PHP 网络托管/VPS。
+ * 一款不错的Onedrive目录索引和管理器。可以部署到 Heroku/Glitch/Vercel/Replit/SCF/FG/FC/CFC/PHP 以及VPS。
  * 实例Demo: https://upload.pan.mediy.cn/
  
 ## 说明
