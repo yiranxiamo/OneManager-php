@@ -2,7 +2,7 @@
 
  * 一款不错的Onedrive目录索引和管理器。可以部署到 Heroku/Glitch/Vercel/Replit/SCF/FG/FC/CFC/PHP 以及VPS。
  * 支持阿里云盘，谷歌Drive，微软OneDrive以及sharepoint
- * 实例Demo: https://upload.pan.mediy.cn/
+ * 实例Demo: https://upload.mediy.cn/
  
 ## 说明
 原程序[OneManager-php-3.5](https://github.com/qkqpttgf/OneManager-php)
